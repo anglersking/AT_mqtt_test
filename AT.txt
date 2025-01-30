@@ -1,0 +1,18 @@
+k29gmhpqPR2
+test1
+53b87fa33179c338adcd53e0f9986ca5
+
+
+AT+MQTTCFG="iot-06z00fomtxkz3i1.mqtt.iothub.aliyuncs.com",1883,"k29gmhpqPR2.test1|securemode=2,signmethod=hmacsha256,timestamp=1738216832605|",60,"test1&k29gmhpqPR2","115765c9143734d508626ec3d83ed91df2fb5b4d6e21ae2a3fb5bef6143a360f",1,0
+
+/sys/k29gmhpqPR2/${deviceName}/thing/event/property/post_reply
+
+AT+MQTTSUB="/sys/k29gmhpqPR2/test1/thing/event/property/post_reply",1
+OK // 收到回复
++MQTTSUBACK:1,1,/sys/k0jupf7pPVt/MN316/thing/event/property/post_reply  // 收到回复›
+
+
+
+AT+MQTTPUB="/sys/k29gmhpqPR2/test1/thing/event/property/post",0,0,0,0,"{params:{sws:{sw1:1,sw2:0},SoilTemperature:51.8,SoilMoisture:37,WaterOutletSwitch:1}}"
+OK  // 收到回复
++MQTTPUBLISH:0,0,0,0,/sys/k0jupf7pPVt/MN316/thing/event/property/post_reply,107,{"code":200,"data":{},"id":"null","message":"success","method":"thing.event.property.post","version":"1.0"}  // 收到回复
