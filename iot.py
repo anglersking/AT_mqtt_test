@@ -43,6 +43,7 @@ client.on_disconnect = on_disconnect
 try:
     print("🚀 连接 MQTT 服务器...")
     client.connect(HOST, PORT, keepalive=60)
+    time.sleep(10)
     client.loop_start()  # 启动 MQTT 监听
 
     # 发送 MQTT 消息
